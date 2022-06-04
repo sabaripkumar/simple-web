@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: sabaripkumarsimpleweb 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: sabaripkumarsimpleweb
+  template:
+    metadata:
+      labels:
+        app: sabaripkumarsimpleweb 
+    spec:
+      containers:
+        - name: sabaripkumarsimpleweb 
+          image: kumaracr01.azurecr.io/sabaripkumarsimpleweb
+          ports:
+          - containerPort: 80
